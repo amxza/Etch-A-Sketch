@@ -1,0 +1,21 @@
+:root {
+  --grid-size: 16;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 512px;  /* Must be an exact square to keep cells square */
+  height: 512px;
+  border: 1px solid #220d0d;
+}
+
+.grid-item {
+  /* 100% / 16 = 6.25% */
+  width: calc(100% / var(--grid-size));
+  height: calc(100% / var(--grid-size));
+  
+  /* Prevents borders from pushing the 16th item onto the next row */
+  box-sizing: border-box;
+  border: 1px solid #eee;
+}
